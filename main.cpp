@@ -20,14 +20,16 @@ int main()
   
   cout<<"Enter gradebook file: ";
   cin>>filename;
-  gradebook = loadGrades( filename );
-  avgGrade = averageAssignment( gradebook ); // <-- IMPLEMENT FUNCTION FOR THIS
+  gradebook = loadGrades( filename ); // <-- IMPLEMENT FUNCTION FOR THIS
+  avgGrade = averageAssignment( gradebook );
   
   display(avgGrade);
 
   return 0;
 }
 
+//Takes a 2-dimensional matrix of grades and averages each column to return a
+//1-dimensional vector of each column's average.
 vector <double> averageAssignment( vector <vector <double> > all)
 {
   vector <double> result;
@@ -47,6 +49,8 @@ vector <double> averageAssignment( vector <vector <double> > all)
   return result;
 }
 
+//Takes a vector of doubles and displays its contents, separated by spaces,
+//as the average grades per assignment
 void display(vector <double> grades)
 {
   cout<<"===AVERAGE GRADES PER ASSIGNMENT===\n";
